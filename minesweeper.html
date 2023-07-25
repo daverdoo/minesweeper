@@ -1,0 +1,47 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="css/minesweeper.css">
+  <link rel="icon" type="image/png" href="img/mine.png" />
+  <script src="js/minesweeper.js"></script>
+  <script src="js/explosion.js"></script>
+  <title>MineSweeper</title>
+</head>
+
+<body>
+  <canvas id="canvas"></canvas>
+
+  <center>
+    <div class="overlay hidden"></div>
+    <div id="message" style="height: 3.5rem;"></div>
+    <div id="minefield"></div>
+    <div class="banner_content">
+      <table class="minefield-table">
+        <tbody>
+          <tr align="center">
+            <td class="header-cell">
+              <div id="flagcount">
+            </td>
+            <td class="header-cell"><img src="img/reset.png" onclick="resetGame()" alt="Reset Game"></img></td>
+            <td class="header-cell"><img src="img/pause.png" id="pause-button" onclick="pauseGame()" alt="Pause Game"></img></td>
+            <td class="header-cell"><img src="img/high-scores.png" class="btn-open" alt="High Scores"></td>
+            <td class="header-cell">
+              <div id="timer">Time: 00:00</div>
+            </td>
+          </tr>
+          <tr align="center">
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </center>
+  <section class="modal hidden">
+    <div class="flex">
+    </div>
+    <div id="highscore-text">
+    </div>
+    <button class="btn-close">Close</button>
+  </section>
+</body>
+
+</html>
