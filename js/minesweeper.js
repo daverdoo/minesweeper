@@ -134,6 +134,10 @@ function startTimer() {
 }
 
 function pauseGame() {
+    if (gameover || !initialized) {
+        return;
+    }
+
     if (!paused) {
         clearInterval(interval);
         interval = undefined;
@@ -149,6 +153,7 @@ function pauseGame() {
 
 function updatePauseButton(pause) {
     let thisButton = document.getElementById("pause-button");
+    thisButton.addEventListener("onclick", pauseGame);
     if (pause) {
         paused = true;
         thisButton.setAttribute("src","img/play.png");
@@ -162,13 +167,13 @@ function resetPauseButton() {
     paused = false;
     let thisButton = document.getElementById("pause-button");
     thisButton.setAttribute("style","opacity:0.5; -moz-opacity:0.5; filter:alpha(opacity=50)");
+    thisButton.removeEventListener("onclick", pauseGame);
 }
 
 function stopTimer() {
     if (interval) {
         clearInterval(interval);
         interval = undefined;
-        let thisButton = document.getElementById("pause-button");
         resetPauseButton();
     }
 }

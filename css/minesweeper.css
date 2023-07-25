@@ -42,6 +42,8 @@ td.cell {
 
 #flagcount {
   display: inline-block;
+  border-radius: 6px;
+  width: 200px;
   padding: 0.8rem 1.4rem;
   text-align: center;
   font-size: 1em;
@@ -51,7 +53,9 @@ td.cell {
 
 #timer {
   display: inline-block;
+  border-radius: 6px;
   padding: 0.8rem 1.4rem;
+  width: 200px;
   text-align: center;
   font-size: 1em;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
